@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row justify-content-sm-center">
+    <div class="col-6 main-container">
+      <div *ngIf="selectedStory" class="container">
+        <div class="row">
+          <div class="col">
+
+            <div class="row mb-3">
+              <div class="col-auto pr-1">
+                <div [ngStyle]="{'background-image': 'url(../../assets/userPics/Monkey3.jpg)'}" class="rounded-circle img-user "></div>
+              </div>
+              <div class="col-4 align-self-center pl-1">
+                <p class="author-text">Pablo Ruiz</p>
+                <p class="author-text">On Sept 3, 2017</p>
+              </div>
+              <div class="col-auto ml-auto align-self-center">
+                <p style="font-size:12px;" class="text-muted mb-0">Back to stories</p>
+              </div>
+            </div>
+
+            <h1>{{selectedStory.storyTitle}}</h1>
+            <hr>
+            <p>
+              <ng-container *ngFor="let sp of _ss.constructedStory">
+                <span [ngClass]="{'text-old': sp._id != selectedStoryPiece._id, 'text-new': sp._id == selectedStoryPiece._id}">{{sp.storyPieceText}}</span>
+              </ng-container>
+            </p>
+            <!-- <p>{{constructedStory}}</p> -->
+
+
+            <div *ngIf="selectedStoryPieceChildren.length >0" class="container">
+              <hr>
+              <p>Choose how you'd like the story to continue:</p>
+
+              <ul class="pl-0">
+                <ng-container *ngFor="let sp of selectedStoryPieceChildren">
+                  <div class="list-group">
+                    <a [routerLink]="['/story',selectedStory._id,sp._id]" class="list-group-item"
+                    (mouseenter)='enter(sp._id)' (mouseleave)='leave(sp._id)'>
+                      {{sp.storyPieceText}}
+                    </a>
+                  </div>
+                </ng-container>
+              </ul>
+            </div>
+            <div *ngIf="selectedStoryPieceChildren.length== 0" class="container">
+              <p class="theend">THE END</p>
+            </div>
+
+      <!--
+            <pre>
+            {{selectedStoryPiece | json}}
+            </pre> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
