@@ -14,7 +14,7 @@
                 <p class="author-text">On Sept 3, 2017</p>
               </div>
               <div class="col-auto ml-auto align-self-center">
-                <p style="font-size:12px;" class="text-muted mb-0">Back to stories</p>
+                <a [routerLink]="['/stories']" style="font-size:12px;" class="text-muted mb-0">Back to stories</a>
               </div>
             </div>
 
@@ -38,6 +38,15 @@
                     <a [routerLink]="['/story',selectedStory._id,sp._id]" class="list-group-item"
                     (mouseenter)='enter(sp._id)' (mouseleave)='leave(sp._id)'>
                       {{sp.storyPieceText}}
+                      <div class="row mt-3">
+                        <div class="col-4 ml-auto align-self-center pr-2">
+                          <p class="author-text text-right">Pablo Ruiz</p>
+                          <p class="author-text text-right">On Sept 3, 2017</p>
+                        </div>
+                        <div class="col-auto pl-2 pr-0 mr-2">
+                          <div [ngStyle]="{'background-image': 'url(../../assets/userPics/Monkey3.jpg)'}" class="rounded-circle img-user "></div>
+                        </div>
+                      </div>
                     </a>
                   </div>
                 </ng-container>

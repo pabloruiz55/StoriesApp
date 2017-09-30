@@ -8,7 +8,8 @@
 .main-container{
   background-color: white;
   margin-top: 50px;
-  padding: 30px 30px 30px 30px;
+  margin-bottom: 100px;
+  padding: 30px 30px 0px 30px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 
 }
@@ -29,9 +30,9 @@
 
 .list-group-item{
   border:0px;
-  background-color: #0167FF;
+  background-color: #EDE4D8;
   border-radius: 0;
-  color:white;
+  color:#5A2916;
   margin-bottom:20px;
 }
 
